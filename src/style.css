@@ -25,6 +25,7 @@ header h2 {
 .form {
 	width: 800px;
 	margin: 50px auto 20px;
+	max-width: 80%;
 }
 
 #todoInput {
@@ -41,6 +42,7 @@ header h2 {
 
 .list {
 	width: 800px;
+	max-width: 100%;
 	margin: 0 auto;
 }
 .task {

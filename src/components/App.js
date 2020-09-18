@@ -22,6 +22,7 @@ const App = () => {
                 _setLoader(oldVal => oldVal.slice(1));
             }
         })();
+        // eslint-disable-next-line
     }, []);
 
 

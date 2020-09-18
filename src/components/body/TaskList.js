@@ -23,10 +23,14 @@ const TaskList = () => {
         deleteTodo(task);
     };
 
+    const renderTaskItem = (task) => {
+    return <li onClick={() => handleClick(task)} key={task.id} className={`task ${task.completed ? 'complete' : ''}`}><i className={`customCheckBox ${task.completed ? 'fas fa-check-square' : "far fa-square"}`}></i> {task.task}<span onClick={e => handleDelete(e, task)}>X</span></li>
+    }
+
     return (
         <ul className="list">
             {
-                tasks.map(task => <li onClick={() => handleClick(task)} key={task.id} className={`task ${task.completed ? 'complete' : ''}`}>{task.task}<span onClick={e => handleDelete(e, task)}>X</span></li>)
+                tasks.map(renderTaskItem)
             }
         </ul>
     )

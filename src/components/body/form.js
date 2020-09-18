@@ -5,14 +5,10 @@ const Form = () => {
 
     const [text, setText] = useState('');
 
-    async function handleSubmit(e) {
+    function handleSubmit(e) {
         e.preventDefault();
         if(text.length === 0) return;
-        try {
-            await addTodo(text);
-        } catch(e) {
-            console.log(e);
-        }
+        addTodo(text).catch(console.log);
         setText('');
     }
 

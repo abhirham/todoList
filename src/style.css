@@ -97,6 +97,7 @@ li span:hover {
 
 ul {
 	list-style: none;
+	padding-left: 0;
 
 	-webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */

@@ -6,11 +6,15 @@ const TaskList = () => {
     const [tasks, setTasks] = useState([]);
 
     useEffect(() => {
-        tasksStream().onSnapshot(qs => {
+        let unSubscribe = tasksStream().onSnapshot(qs => {
             let arr = [];
             qs.forEach(doc => arr.push(doc.data()));
             setTasks(arr);
-        })
+        });
+
+        return () => {
+            unSubscribe();
+        }
     }, []);
 
     const handleClick = task => {
